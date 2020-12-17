@@ -35,7 +35,8 @@ namespace dooms
         private void btnAddStud_Click(object sender, EventArgs e)
         {
 
-            eleme
+            Element st = new Element("ST", txtX, txtY, txtZ);
+
 
 
         }

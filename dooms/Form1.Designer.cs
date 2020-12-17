@@ -63,6 +63,10 @@
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtHeader = new System.Windows.Forms.RichTextBox();
             this.btnCreateFile = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstItems
@@ -75,7 +79,7 @@
             // 
             // btnAddStud
             // 
-            this.btnAddStud.Location = new System.Drawing.Point(138, 91);
+            this.btnAddStud.Location = new System.Drawing.Point(138, 234);
             this.btnAddStud.Name = "btnAddStud";
             this.btnAddStud.Size = new System.Drawing.Size(121, 23);
             this.btnAddStud.TabIndex = 1;
@@ -85,7 +89,7 @@
             // 
             // btnAddSUB
             // 
-            this.btnAddSUB.Location = new System.Drawing.Point(138, 120);
+            this.btnAddSUB.Location = new System.Drawing.Point(138, 263);
             this.btnAddSUB.Name = "btnAddSUB";
             this.btnAddSUB.Size = new System.Drawing.Size(121, 23);
             this.btnAddSUB.TabIndex = 2;
@@ -343,11 +347,43 @@
             this.btnCreateFile.UseVisualStyleBackColor = true;
             this.btnCreateFile.Click += new System.EventHandler(this.btnCreateFile_Click);
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(159, 75);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(63, 20);
+            this.textBox8.TabIndex = 34;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(159, 104);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(63, 20);
+            this.textBox9.TabIndex = 35;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(159, 140);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(63, 20);
+            this.textBox10.TabIndex = 36;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(159, 177);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(63, 20);
+            this.textBox11.TabIndex = 37;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 450);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.btnCreateFile);
             this.Controls.Add(this.txtHeader);
             this.Controls.Add(this.txtOutput);
@@ -425,6 +461,10 @@
         private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.RichTextBox txtHeader;
         private System.Windows.Forms.Button btnCreateFile;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }
 
