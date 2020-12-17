@@ -63,10 +63,14 @@
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtHeader = new System.Windows.Forms.RichTextBox();
             this.btnCreateFile = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtF1 = new System.Windows.Forms.TextBox();
+            this.txtF2 = new System.Windows.Forms.TextBox();
+            this.txtF3 = new System.Windows.Forms.TextBox();
+            this.txtF4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstItems
@@ -347,43 +351,83 @@
             this.btnCreateFile.UseVisualStyleBackColor = true;
             this.btnCreateFile.Click += new System.EventHandler(this.btnCreateFile_Click);
             // 
-            // textBox8
+            // txtF1
             // 
-            this.textBox8.Location = new System.Drawing.Point(159, 75);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(63, 20);
-            this.textBox8.TabIndex = 34;
+            this.txtF1.Location = new System.Drawing.Point(159, 75);
+            this.txtF1.Name = "txtF1";
+            this.txtF1.Size = new System.Drawing.Size(63, 20);
+            this.txtF1.TabIndex = 34;
             // 
-            // textBox9
+            // txtF2
             // 
-            this.textBox9.Location = new System.Drawing.Point(159, 104);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(63, 20);
-            this.textBox9.TabIndex = 35;
+            this.txtF2.Location = new System.Drawing.Point(159, 101);
+            this.txtF2.Name = "txtF2";
+            this.txtF2.Size = new System.Drawing.Size(63, 20);
+            this.txtF2.TabIndex = 35;
             // 
-            // textBox10
+            // txtF3
             // 
-            this.textBox10.Location = new System.Drawing.Point(159, 140);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(63, 20);
-            this.textBox10.TabIndex = 36;
+            this.txtF3.Location = new System.Drawing.Point(159, 127);
+            this.txtF3.Name = "txtF3";
+            this.txtF3.Size = new System.Drawing.Size(63, 20);
+            this.txtF3.TabIndex = 36;
             // 
-            // textBox11
+            // txtF4
             // 
-            this.textBox11.Location = new System.Drawing.Point(159, 177);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(63, 20);
-            this.textBox11.TabIndex = 37;
+            this.txtF4.Location = new System.Drawing.Point(159, 153);
+            this.txtF4.Name = "txtF4";
+            this.txtF4.Size = new System.Drawing.Size(63, 20);
+            this.txtF4.TabIndex = 37;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(228, 78);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Field 1";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(228, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Field 2";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(228, 130);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Field 3";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(228, 156);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 13);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "Field 4";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 450);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtF4);
+            this.Controls.Add(this.txtF3);
+            this.Controls.Add(this.txtF2);
+            this.Controls.Add(this.txtF1);
             this.Controls.Add(this.btnCreateFile);
             this.Controls.Add(this.txtHeader);
             this.Controls.Add(this.txtOutput);
@@ -461,10 +505,14 @@
         private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.RichTextBox txtHeader;
         private System.Windows.Forms.Button btnCreateFile;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtF1;
+        private System.Windows.Forms.TextBox txtF2;
+        private System.Windows.Forms.TextBox txtF3;
+        private System.Windows.Forms.TextBox txtF4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 

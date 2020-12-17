@@ -34,8 +34,13 @@ namespace dooms
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
+            float xpos, ypos, zpos;
 
-            Element st = new Element("ST", txtX, txtY, txtZ);
+
+
+
+
+            Element st = new Element("ST", float.Parse(txtX.Text), txtY, txtZ, xpos, ypos, zpos, );
 
 
 
