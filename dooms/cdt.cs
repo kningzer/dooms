@@ -16,6 +16,7 @@ namespace dooms
 
         public void updateList(ListBox lst)
         {
+            lst.Items.Clear();
             foreach (var el in ElementList)
             {
                 lst.Items.Add(el.ToStringST());
