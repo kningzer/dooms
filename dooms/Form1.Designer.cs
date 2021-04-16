@@ -79,8 +79,8 @@
             this.txtPath = new System.Windows.Forms.TextBox();
             this.fst = new System.Windows.Forms.NumericUpDown();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.offset = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.offset = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -88,6 +88,10 @@
             this.lblHeight = new System.Windows.Forms.Label();
             this.lblSpace = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnOpenFIle = new System.Windows.Forms.Button();
+            this.cbxWLength = new System.Windows.Forms.CheckBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btnNoIndex = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -100,9 +104,9 @@
             // lstItems
             // 
             this.lstItems.FormattingEnabled = true;
-            this.lstItems.Location = new System.Drawing.Point(12, 12);
+            this.lstItems.Location = new System.Drawing.Point(4, 461);
             this.lstItems.Name = "lstItems";
-            this.lstItems.Size = new System.Drawing.Size(209, 420);
+            this.lstItems.Size = new System.Drawing.Size(499, 108);
             this.lstItems.TabIndex = 0;
             // 
             // btnAddStud
@@ -309,6 +313,7 @@
             this.txtAutoStuds.Size = new System.Drawing.Size(28, 20);
             this.txtAutoStuds.TabIndex = 27;
             this.txtAutoStuds.Text = "10";
+            this.txtAutoStuds.TextChanged += new System.EventHandler(this.txtAutoStuds_TextChanged);
             // 
             // label13
             // 
@@ -339,17 +344,17 @@
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(733, 34);
+            this.txtOutput.Location = new System.Drawing.Point(509, 34);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(370, 398);
+            this.txtOutput.Size = new System.Drawing.Size(370, 535);
             this.txtOutput.TabIndex = 31;
             this.txtOutput.Text = "";
             // 
             // txtHeader
             // 
-            this.txtHeader.Location = new System.Drawing.Point(431, 230);
+            this.txtHeader.Location = new System.Drawing.Point(363, 234);
             this.txtHeader.Name = "txtHeader";
-            this.txtHeader.Size = new System.Drawing.Size(296, 172);
+            this.txtHeader.Size = new System.Drawing.Size(140, 172);
             this.txtHeader.TabIndex = 32;
             this.txtHeader.Text = "VERSION:5.0; \nTXT:Magiska sandaler;\nTXT:Med flipp-flopp; \nPNO:stk; \nFL:1; \nPL:fal" +
     "se; \nEL:false; \nHV:false; \nWIN:false; \nELD:EXTERIOR; \nDNO:TESTPANEL1; \nELF:OUTSI" +
@@ -357,7 +362,7 @@
             // 
             // btnCreateFile
             // 
-            this.btnCreateFile.Location = new System.Drawing.Point(228, 337);
+            this.btnCreateFile.Location = new System.Drawing.Point(4, 337);
             this.btnCreateFile.Name = "btnCreateFile";
             this.btnCreateFile.Size = new System.Drawing.Size(121, 23);
             this.btnCreateFile.TabIndex = 33;
@@ -451,7 +456,7 @@
             // 
             // btnNewHeight
             // 
-            this.btnNewHeight.Location = new System.Drawing.Point(228, 308);
+            this.btnNewHeight.Location = new System.Drawing.Point(4, 308);
             this.btnNewHeight.Name = "btnNewHeight";
             this.btnNewHeight.Size = new System.Drawing.Size(121, 23);
             this.btnNewHeight.TabIndex = 44;
@@ -468,7 +473,7 @@
             this.groupBox1.Controls.Add(this.txtAutoStuds);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtAutoLength);
-            this.groupBox1.Location = new System.Drawing.Point(431, 86);
+            this.groupBox1.Location = new System.Drawing.Point(207, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 99);
             this.groupBox1.TabIndex = 45;
@@ -483,7 +488,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(431, 12);
+            this.groupBox2.Location = new System.Drawing.Point(207, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(140, 68);
             this.groupBox2.TabIndex = 46;
@@ -498,7 +503,7 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(577, 12);
+            this.groupBox3.Location = new System.Drawing.Point(353, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(150, 67);
             this.groupBox3.TabIndex = 47;
@@ -524,7 +529,7 @@
             this.groupBox4.Controls.Add(this.txtF1);
             this.groupBox4.Controls.Add(this.txtF2);
             this.groupBox4.Controls.Add(this.txtF3);
-            this.groupBox4.Location = new System.Drawing.Point(236, 12);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(189, 205);
             this.groupBox4.TabIndex = 48;
@@ -533,7 +538,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(228, 366);
+            this.button1.Location = new System.Drawing.Point(4, 366);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 49;
@@ -543,11 +548,11 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(227, 412);
+            this.txtPath.Location = new System.Drawing.Point(3, 412);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(500, 20);
             this.txtPath.TabIndex = 42;
-            this.txtPath.Text = "C:\\Users\\Daniel.Blom\\Desktop\\cdt\\magiskaFilen.cdt";
+            this.txtPath.Text = "C:\\cdt\\magiskaFilen.cdt";
             // 
             // fst
             // 
@@ -571,12 +576,21 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.offset);
             this.groupBox5.Controls.Add(this.fst);
-            this.groupBox5.Location = new System.Drawing.Point(236, 223);
+            this.groupBox5.Location = new System.Drawing.Point(12, 223);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(132, 49);
             this.groupBox5.TabIndex = 51;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Fasteners";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(80, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Offset";
             // 
             // offset
             // 
@@ -595,19 +609,10 @@
             0,
             0});
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 52;
-            this.label5.Text = "Offset";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(904, 12);
+            this.label12.Location = new System.Drawing.Point(680, 12);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 13);
             this.label12.TabIndex = 53;
@@ -617,7 +622,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(224, 389);
+            this.label18.Location = new System.Drawing.Point(0, 389);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(44, 13);
             this.label18.TabIndex = 54;
@@ -626,7 +631,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(560, 214);
+            this.label19.Location = new System.Drawing.Point(413, 218);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(42, 13);
             this.label19.TabIndex = 55;
@@ -635,7 +640,7 @@
             // 
             // btnSetStud
             // 
-            this.btnSetStud.Location = new System.Drawing.Point(228, 279);
+            this.btnSetStud.Location = new System.Drawing.Point(4, 279);
             this.btnSetStud.Name = "btnSetStud";
             this.btnSetStud.Size = new System.Drawing.Size(121, 23);
             this.btnSetStud.TabIndex = 56;
@@ -646,7 +651,7 @@
             // lblHeight
             // 
             this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(455, 190);
+            this.lblHeight.Location = new System.Drawing.Point(231, 204);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(42, 13);
             this.lblHeight.TabIndex = 57;
@@ -655,15 +660,16 @@
             // lblSpace
             // 
             this.lblSpace.AutoSize = true;
-            this.lblSpace.Location = new System.Drawing.Point(628, 190);
+            this.lblSpace.Location = new System.Drawing.Point(231, 185);
             this.lblSpace.Name = "lblSpace";
             this.lblSpace.Size = new System.Drawing.Size(42, 13);
             this.lblSpace.TabIndex = 58;
             this.lblSpace.Text = "Header";
+            this.lblSpace.Click += new System.EventHandler(this.lblSpace_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(355, 279);
+            this.button2.Location = new System.Drawing.Point(131, 279);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 23);
             this.button2.TabIndex = 59;
@@ -671,11 +677,54 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnOpenFIle
+            // 
+            this.btnOpenFIle.Location = new System.Drawing.Point(131, 366);
+            this.btnOpenFIle.Name = "btnOpenFIle";
+            this.btnOpenFIle.Size = new System.Drawing.Size(70, 23);
+            this.btnOpenFIle.TabIndex = 60;
+            this.btnOpenFIle.Text = "Öppna fil";
+            this.btnOpenFIle.UseVisualStyleBackColor = true;
+            this.btnOpenFIle.Click += new System.EventHandler(this.btnOpenFIle_Click);
+            // 
+            // cbxWLength
+            // 
+            this.cbxWLength.AutoSize = true;
+            this.cbxWLength.Location = new System.Drawing.Point(165, 246);
+            this.cbxWLength.Name = "cbxWLength";
+            this.cbxWLength.Size = new System.Drawing.Size(150, 17);
+            this.cbxWLength.TabIndex = 61;
+            this.cbxWLength.Text = "Vägg slutar på sista reglen";
+            this.cbxWLength.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(218, 445);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 13);
+            this.label20.TabIndex = 62;
+            this.label20.Text = "Reglar";
+            // 
+            // btnNoIndex
+            // 
+            this.btnNoIndex.Location = new System.Drawing.Point(131, 308);
+            this.btnNoIndex.Name = "btnNoIndex";
+            this.btnNoIndex.Size = new System.Drawing.Size(70, 23);
+            this.btnNoIndex.TabIndex = 63;
+            this.btnNoIndex.Text = "Avmarkera";
+            this.btnNoIndex.UseVisualStyleBackColor = true;
+            this.btnNoIndex.Click += new System.EventHandler(this.btnNoIndex_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 438);
+            this.ClientSize = new System.Drawing.Size(885, 574);
+            this.Controls.Add(this.btnNoIndex);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.cbxWLength);
+            this.Controls.Add(this.btnOpenFIle);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblSpace);
             this.Controls.Add(this.lblHeight);
@@ -776,6 +825,10 @@
         private System.Windows.Forms.Label lblHeight;
         private System.Windows.Forms.Label lblSpace;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOpenFIle;
+        private System.Windows.Forms.CheckBox cbxWLength;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnNoIndex;
     }
 }
 

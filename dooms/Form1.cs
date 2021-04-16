@@ -32,14 +32,31 @@ namespace dooms
             float wallHeight = float.Parse(txtBottomPlateY.Text) + float.Parse(txtTopPlateY.Text) + float.Parse(txtY.Text);
             float topPlate = float.Parse(txtTopPlateY.Text);
             float bottomPlate = float.Parse(txtBottomPlateY.Text);
+
+            float topPlateX, bottomPlateX;
+            if (cbxWLength.Checked)
+            {
+                topPlateX = cdt.currentXPos;
+                bottomPlateX = cdt.currentXPos;
+            }
+            else
+            {
+                topPlateX = float.Parse(txtTopPlateX.Text);
+                bottomPlateX = float.Parse(txtBottomPlateX.Text);
+
+            }
+
+
+
+
             float wallThickness = float.Parse(txtZ.Text);
             Output =  txtHeader.Text + "\n";
 
-            Output = Output + string.Format("ELM:{0}:{1}:{2}:{3}:{4}:{5}:{6};\n", txtBottomPlateX.Text, wallHeight, wallThickness, 1, "wall1", "wall1", "wall1");
+            Output = Output + string.Format("ELM:{0}:{1}:{2}:{3}:{4}:{5}:{6};\n", topPlateX, wallHeight, wallThickness, 1, "wall1", "wall1", "wall1");
             //Top plate
-            Output = Output + string.Format("TS:{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9};\n", txtTopPlateX.Text, txtTopPlateY.Text, txtTopPLateZ.Text, 0, wallHeight-topPlate, 0, "TP", "TPLenth", "TPDim", "TopPlate");
+            Output = Output + string.Format("TS:{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9};\n", topPlateX, txtTopPlateY.Text, txtTopPLateZ.Text, 0, wallHeight-topPlate, 0, "TP", "TPLenth", "TPDim", "TopPlate");
             //Bottom Plate
-            Output = Output + string.Format("BS:{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9};\n", txtBottomPlateX.Text, txtBottomPlateY.Text, txtBottomPlateZ.Text, 0, 0, 0, "BP", "BPLenth", "BPDim", "BottomPlate");
+            Output = Output + string.Format("BS:{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9};\n", bottomPlateX, txtBottomPlateY.Text, txtBottomPlateZ.Text, 0, 0, 0, "BP", "BPLenth", "BPDim", "BottomPlate");
 
 
             foreach (var item in lstItems.Items)
@@ -75,16 +92,58 @@ namespace dooms
 
         private void btnAddStud_Click(object sender, EventArgs e)
         {
-            float xpos = cdt.currentXPos;
+            float space;
+            float xpos;
+
+            if (cdt.ElementList.Count == 0)
+            {
+                space = 0;
+            }
+            else
+            {
+                space = float.Parse(txtSpace.Text);
+            }
+
+
+            if  (lstItems.SelectedIndices.Count > 0)
+            {
+
+                xpos = cdt.ElementList[lstItems.SelectedIndex].posX + cdt.ElementList[lstItems.SelectedIndex].x + space;
+            }
+            else
+            {
+
+                xpos = cdt.currentXPos + space;
+            }
+
+
+
             float ypos = float.Parse(txtBottomPlateY.Text);
             float zpos = 0; //float.Parse(txtZ.Text);
-            float Xspace = float.Parse(txtSpace.Text);
+            float Xspace = space + float.Parse(txtX.Text);
             
 
             Element st = new Element("ST", float.Parse(txtX.Text), float.Parse(txtY.Text), float.Parse(txtZ.Text), xpos, ypos, zpos, Xspace, txtF1.Text, txtF2.Text, txtF3.Text, txtF4.Text);
 
-            cdt.ElementList.Add(st);
-            cdt.currentXPos += Xspace;
+
+            if (lstItems.SelectedIndices.Count > 0)
+            {
+
+                cdt.ElementList.Insert(lstItems.SelectedIndex, st);
+
+            }
+            else
+            {
+
+                cdt.ElementList.Add(st);
+                cdt.currentXPos += Xspace;
+            }
+
+
+
+
+
+
 
             lstItems.Items.Clear();
 
@@ -135,7 +194,7 @@ namespace dooms
             int SplicesDone = 0;
 
 
-            for (int i = 0; i < noOfStuds; i++)
+            for (int i = 0; i < (noOfStuds + noOfSplices*2); i++)
             {
                 float Xspace;
 
@@ -143,7 +202,7 @@ namespace dooms
                 float ypos = float.Parse(txtBottomPlateY.Text);
                 float zpos = 0; //float.Parse(txtZ.Text);
 
-                if (i == noOfStuds-1)
+                if (i == (noOfStuds-1) + noOfSplices * 2 || xpos >= Length - float.Parse(txtX.Text))
                 {
                     Xspace = 0;
                     xpos = Length - float.Parse(txtX.Text);
@@ -154,15 +213,28 @@ namespace dooms
                 }
 
 
+                
 
-                Element st = new Element("ST", float.Parse(txtX.Text), float.Parse(txtY.Text), float.Parse(txtZ.Text), xpos, ypos, zpos, Xspace, txtF1.Text, txtF2.Text, txtF3.Text, txtF4.Text);
+                Element st;
 
-                cdt.ElementList.Add(st);
+                if (!(xpos < ( (float.Parse(txtJoint.Text) * (SplicesDone+1)) + float.Parse(txtX.Text)) && 
+                    xpos > ((float.Parse(txtJoint.Text) * (SplicesDone+1)) - (float.Parse(txtX.Text)*2))))
+                {
+                    st = new Element("ST", float.Parse(txtX.Text), float.Parse(txtY.Text), float.Parse(txtZ.Text), xpos, ypos, zpos, Xspace, txtF1.Text, txtF2.Text, txtF3.Text, txtF4.Text);
+
+                    cdt.ElementList.Add(st);
+                }
+
+                if (xpos >= (Length - float.Parse(txtX.Text)))
+                {
+                    break;
+                }
+
                 cdt.currentXPos += Xspace;
 
                 if (cbxSplice.Checked)
                 {
-                    if ( spacing >= splice)
+                    if ( spacing >= splice  )
                     {
                         splice = int.Parse(txtJoint.Text);
 
@@ -255,7 +327,7 @@ namespace dooms
 
         private void btnNewHeight_Click(object sender, EventArgs e)
         {
-            string wh = "";
+            string wh = "0";
             ShowInputDialog(ref wh);
             float wallHeight = float.Parse(wh);
             float plates = float.Parse(txtTopPlateY.Text);
@@ -303,7 +375,7 @@ namespace dooms
 
         private void btnSetStud_Click(object sender, EventArgs e)
         {
-            string wh = "";
+            string wh = "0";
             ShowInputDialog(ref wh);
             float wallHeight = float.Parse(wh);
             float stud = wallHeight ;
@@ -328,7 +400,28 @@ namespace dooms
         private void button2_Click(object sender, EventArgs e)
         {
             cdt.ElementList.Clear();
+            cdt.currentXPos = 0;
             lstItems.Items.Clear();
+        }
+
+        private void btnOpenFIle_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@txtPath.Text);
+        }
+
+        private void lblSpace_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNoIndex_Click(object sender, EventArgs e)
+        {
+            lstItems.ClearSelected();
+        }
+
+        private void txtAutoStuds_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
